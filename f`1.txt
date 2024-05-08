@@ -1,0 +1,129 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import fs from 'fs'
+
+const Upload = () => {
+  const [files, setFiles] = useState([]);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+
+  useEffect(()=>{
+    const fetchDoodStreamFiles = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/doodapi');
+        setFiles(response.data ,"this doodapical");
+      } catch (error) {
+        console.error('Error fetching DoodStream files:', error);
+      }
+    };
+  
+  },[])
+
+  const fetchUploadedUrls = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000/listUploadedUrls');
+      console.log('Uploaded URLs:', response.data);
+      // Do something with the uploaded URLs if needed
+    } catch (error) {
+      console.error('Error fetching uploaded URLs:', error);
+    }
+  };
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const handleUpload = async (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    try {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+  
+      const response = await axios.post('http://localhost:4000/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': 'Bearer 396272eryk12p9b7hdsjkc' // Include the API key in the Authorization header
+        }
+      });
+  
+      console.log('File uploaded successfully:', response.data);
+  
+      // After successful upload, fetch DoodStream files to refresh the list
+      fetchDoodStreamFiles();
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
+  };
+  
+  useEffect(() => {
+    fetchUploadedUrls(); // Fetch uploaded URLs when the component mounts
+  }, []); // Empty dependency array to ensure it runs only once
+
+  return (
+    <div>
+      <h2>DoodStream Files</h2>
+      
+      <div>
+        <h2>Upload File</h2>
+
+        <form action="" onSubmit={handleUpload}>
+        {/* <input type="hidden" name="api_key" value="396272eryk12p9b7hdsjkc" /> */}
+        <input type="file" onChange={handleFileChange} />
+
+        <button type='submit' className='bg-red-600' >Upload</button>
+        </form>
+      </div>
+      <h2>Video Player</h2>
+    </div>
+  );
+};
+
+export default Upload;
+
+
+w-[40vw] h-[69vw] max-w-[300px] max-h-[500px]
+
+
+
+animename
+: 
+"kansihk"
+discription
+: 
+"jksdaads ksajhdksa hdkjhsakj hdkajshdjkashd kjashd"
+dou
+: 
+"2024-05-08T06:28:31.815Z"
+ep
+: 
+1
+genres
+: 
+(2) ['lkjcsajaslcjlas', 'ashdksahdjs']
+new
+: 
+true
+popular
+: 
+true
+quality
+: 
+null
+season
+: 
+1
+thumnail
+: 
+"https://images.unsplash.com/photo-1695978306113-ccbfa067654c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+trending
+: 
+false
+videolink
+: 
+"https://d000d.com/e/vx4w1zznsfq9"
+__v
+: 
+0
+_id
+: 
+"663a780ca04ccfb21f8323ff"  

@@ -1,0 +1,23 @@
+@font-face {
+    font-family: gilroy;
+    src: url('../fonts/gilroy/Gilroy-Light.ttf')  format('truetype');
+  }
+  @font-face {
+    font-family: monument;
+    src: url('../fonts/monument/MonumentExtended-Regular.otf')  format('truetype');
+  }
+
+  *::selection{
+    background-color: white;
+    color: black;
+  }
+
+  *{
+    font-family: "gilroy";
+    color: white;
+  }
+
+  #wel{
+    text-rendering:geometricPrecision;
+    letter-spacing: 2px;
+  }
