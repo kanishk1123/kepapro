@@ -19,7 +19,7 @@ const Adminreg = () => {
                 password
             };
     
-            const response = await axios.post("https://kepapro-back.onrender.com/createadmin", user, { withCredentials: true });
+            const response = await axios.post("/createadmin", user, { withCredentials: true });
             console.log(response.data); // Assuming your backend returns some data upon successful registration
     
             // Reset form fields after successful submission
