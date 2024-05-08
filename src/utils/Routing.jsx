@@ -20,7 +20,7 @@ const Routing = () => {
       <Route path='/all/:type' element={<Allanime/>}/>
       <Route path='/user/:username' element={<User/>} />
       <Route path='/news' element={<News/>} />
-      <Route path='/registration' element={<Registration/>} />
+      <Route path='/registre' element={<Registration/>} />
       <Route path='/login' element={<Login/>} />
       <Route path='/kanishkproh' element={<Adminlogin/>} />
       <Route path='/adminreg' element={<Adminreg/>} />
