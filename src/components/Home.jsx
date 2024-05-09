@@ -69,7 +69,7 @@ const Home = () => {
                     </div>
                     <img
                       className="w-full h-full object-cover"
-                      src={item.thumnail}
+                      src="https://i.imgur.com/YQpebYY.jpeghttps://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=1200,height=675,quality=85/catalog/crunchyroll/aa31911c746c4d7d027b190f2e184834.jpe"
                       alt=""
                     />
                   </Link>
