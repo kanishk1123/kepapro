@@ -6,7 +6,7 @@ import axios from '../utils/Axios';
 
 const Watch = () => {
 
-  const { name, seo, episode } = useParams(); // Accessing the 'name', 'season', and 'ep' parameters using useParams
+  const { name, seo, episode } = useParams(); // Accessing the 'name', 'season', and 'episode' parameters using useParams
 
   const [video, setVideo] = useState("");
   const [disc, setdisc] = useState("");
@@ -17,14 +17,23 @@ const Watch = () => {
   const [data, setData] = useState([]);
   const [live, setLive] = useState(false); // Assuming this is meant to track if content is live
   const [filteredData, setFilteredData] = useState(null); // Initialize filteredData with null
-  const [videoquality,setvideoquality] = useState("720")
+  const [videoquality,setvideoquality] = useState("720");
+  const url = window.location.href;
+
+  // Decode the URL
+const decodedUrl = decodeURIComponent(url);
+
+// Extract the desired part
+const parts = decodedUrl.split('/');
+const desiredPart = parts.slice(4).join('/');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/watchall");
         setData(response.data);
-        console.log(data)
+      
+        
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle error if needed
@@ -57,7 +66,7 @@ const Watch = () => {
       const filteredByName = data.filter(item => item.animename === name);
       // Find the entry that matches both season and episode within the filtered data
       const filtered = filteredByName.find(item => item.season == seo && item.ep == episode && item.quality == videoquality);
-      console.log(filtered, "this is here");
+      console.log(desiredPart,"thisis here")
       return filtered;
     };
 
@@ -71,7 +80,7 @@ const Watch = () => {
       setquality(filtered.quality);
       setthumnail(filtered.thumnail);
     }
-  }, [data, name, seo, episode]);
+  }, [data, name, seo, episode, videoquality]); // Added 'videoquality' to the dependency array
 
   return (
     <>
@@ -103,10 +112,10 @@ const Watch = () => {
           </div>
         </div>
         <div className="flex gap-3">
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(1080)}>1080p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(720)}>720p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(480)}>480p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(240)}>240p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("1080")}>1080p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("720")}>720p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("240")}>240p</button>
 </div>
 
         <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
