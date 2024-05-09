@@ -25,7 +25,7 @@ const decodedUrl = decodeURIComponent(url);
 
 // Extract the desired part
 const parts = decodedUrl.split('/');
-const desiredPart = parts.slice(4).join('/');
+const desiredPart = parts.slice(4);
 
   useEffect(() => {
     const fetchData = async () => {
