@@ -105,8 +105,7 @@ const desiredPart = parts.slice(4);
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
             <h1>live: {live ? "Yes" : "No"}</h1> {/* Display live status */}
             <h1>Discription :  {filteredData ? filteredData.discription : ''}</h1>
-            <h1>genrec :  {filteredData ? filteredData.genres : ''}</h1>
-            <h1>genrec :  {filteredData ? filteredData.genres : ''}</h1>
+            <h1>genrec : ${filteredData ? filteredData.genres.join(' | ') : ''}</h1>
             <h1>season:  {seo}</h1>
             <h1>ep :  {episode}</h1>
           </div>
