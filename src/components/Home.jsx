@@ -57,7 +57,7 @@ const Home = () => {
     text-3xl bg-zinc-900 text-white relative  w-full overflow-hidden h-screen">
     <div className="w-[65%] h-full absolute  ">
         <div className="w-[90vw] h-full  flex justify-self-start ">
-            <div className="w-[90vw] h-full  overflow-hidden clip-path-polygon
+            <div className="w-[90vw] h-full  overflow-hidden 
             absolute backdrop-blur-[30px] justify-between flex gap-4 flex-col p-20 bg-[rgb(0,0,0,0.8)]">
             <div>
                 <p>season 1 </p>
