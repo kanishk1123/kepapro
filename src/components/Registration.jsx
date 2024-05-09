@@ -19,7 +19,7 @@ const Registration = () => {
             password
         };
 
-        const response = await axios.post("/createuser", user, { withCredentials: true });
+        const response = await axios.post("/register", user, { withCredentials: true });
         console.log(response.data); // Assuming your backend returns some data upon successful registration
 
         // Reset form fields after successful submission
