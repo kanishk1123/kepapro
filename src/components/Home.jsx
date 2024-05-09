@@ -25,6 +25,10 @@ const Home = () => {
     background: `linear-gradient(to right,#00000099 75%, transparent 100%)`,
   };
 
+  const clipPathStyle = {
+    clipPath: 'polygon(0 0, 84% 0, 75% 100%, 0% 100%)'
+  };
+
   return (
     <>
       <div className="bg-neutral-900 w-full  h-fit pb-[40px] text-white">
@@ -52,27 +56,35 @@ const Home = () => {
               <Link key={index} to={``}>
                 <SwiperSlide className="relative">
                   <Link to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
-                  <div
-                      className="absolute w-[60%] h-full flex flex-col justify-center items-start pl-[5%]"
-                      style={divstyle1}
-                    >
-                      <h2 className="text-xl text-center font-semibold">
-                        {item.genres}
-                      </h2>
-                      <h2>{item.description}</h2>
-                      <h3 className="text-xl text-center font-semibold">
-                        rating
-                      </h3>
-                      <h3 className="text-xl text-center font-semibold">
-                        {`Season ${item.season} `}mncsmbacsm
-                      </h3>
-                      <h4 className="text-xl text-center font-semibold"></h4>
-                    </div>
-                    <img
-                      className="w-full h-full object-cover"
-                      src="https://i.pinimg.com/736x/51/b6/a3/51b6a3327863d22dbbb355cb137b8025.jpg"
-                      alt=""
-                    />
+                  <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-screen">
+      <div className="w-full h-full flex justify-between">
+        <div className="w-[65%] h-full relative">
+          <div className="w-full h-full flex justify-start">
+            <div className="w-full h-full overflow-hidden" style={{...clipPathStyle, position: 'absolute', backdropFilter: 'blur(30px)'}}>
+              <div className="flex flex-col p-20 bg-[rgba(0,0,0,0.8)]">
+                <div>
+                  <p>season 1</p>
+                  <h1 className="text-[6vw] font-semibold">name</h1>
+                </div>
+                <div className="flex gap-3 justify-self-start items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="50px" width="50px" version="1.1" viewBox="0 0 47.94 47.94" xmlSpace="preserve">
+                    <path style={{ fill: '#ED8A19' }} d="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956C22.602,0.567,25.338,0.567,26.285,2.486z" />
+                  </svg>
+                  <p className="font-semibold text-2xl">30 %</p>
+                  <div className="w-full h-auto flex flex-wrap">
+                    <div className="bg-[rgba(0,0,0,0.5)] px-4 rounded-full backdrop-blur-[60px] py-2">aksjcaksc</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img className="w-3/4 h-full object-cover justify-center" src="https://i.pinimg.com/736x/51/b6/a3/51b6a3327863d22dbbb355cb137b8025.jpg" alt="" />
+          </div>
+        </div>
+        <div className="w-[35%] h-full">
+          <img className="w-full h-full object-cover" src="https://i.pinimg.com/736x/51/b6/a3/51b6a3327863d22dbbb355cb137b8025.jpg" alt="" />
+        </div>
+      </div>
+    </div>
                   </Link>
                 </SwiperSlide>
               </Link>
