@@ -23,10 +23,7 @@ const Context = (props) => {
     
        fetchData() // Fetch data every 5 seconds
     
-        return () => {
-            console.log("Component unmounted");
-            clearInterval(intervalId); // Cleanup function to clear interval
-        };
+       
     }, [setData]); // Add setData as a dependency
 
     return (
