@@ -68,7 +68,7 @@ const Home = () => {
                       <h4 className="text-xl text-center font-semibold"></h4>
                     </div>
                     <img
-                      className="w-1/3 h-full object-cover"
+                      className="w-full h-full object-cover"
                       src={item.thumnail}
                       alt=""
                     />
