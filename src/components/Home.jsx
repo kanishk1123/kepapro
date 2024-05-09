@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { detailsContext } from "../utils/Context";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "../assets/public/css/home.css"
 
 // Import Swiper styles
 import "swiper/css";
