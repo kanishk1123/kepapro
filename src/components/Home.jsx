@@ -54,13 +54,13 @@ const Home = () => {
           >
             {data.slice(0, 5).map((item, index) => (
               <Link key={index} to={``}>
-                <SwiperSlide className="relative">
+                <SwiperSlide className="relative w-full h-full">
                   <Link to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
                   <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-screen">
       <div className="w-full h-full flex justify-between">
         <div className="w-[65%] h-full relative">
           <div className="w-full h-full flex justify-start">
-            <div className="w-full h-full overflow-hidden" style={{...clipPathStyle, position: 'absolute', backdropFilter: 'blur(30px)'}}>
+            <div className="w-[75em] h-[100em] overflow-hidden" style={{...clipPathStyle, position: 'absolute', backdropFilter: 'blur(30px)'}}>
               <div className="flex flex-col p-20 bg-[rgba(0,0,0,0.8)]">
                 <div>
                   <p>season 1</p>
