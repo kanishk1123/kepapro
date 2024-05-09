@@ -66,12 +66,12 @@ const Home = () => {
                         rating
                       </h3>
                       <h3 className="text-xl text-center font-semibold">
-                        {`Season ${item.season} ep ${item.ep} `}
+                        {`Season ${item.season} `}
                       </h3>
                       <h4 className="text-xl text-center font-semibold"></h4>
                     </div>
                     <img
-                      className="w-full h-full object-cover"
+                      className="w-1/3 h-full object-cover"
                       src={item.thumnail}
                       alt=""
                     />
