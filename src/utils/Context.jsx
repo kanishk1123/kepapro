@@ -5,7 +5,7 @@ export const detailsContext = createContext();
 
 const Context = (props) => {
     const [data, setData] = useState([]);
-    const [temp, setTemp] = useState(""); // Renamed to follow conventions
+   // Renamed to follow conventions
 
     useEffect(() => {
         console.log("Component mounted");
@@ -27,7 +27,7 @@ const Context = (props) => {
     }, [setData]); // Add setData as a dependency
 
     return (
-        <detailsContext.Provider value={[data, setData]}>
+        <detailsContext.Provider value={[data, setData ]}>
             {props.children}
         </detailsContext.Provider>
     );
