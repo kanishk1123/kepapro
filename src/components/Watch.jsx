@@ -114,7 +114,6 @@ const desiredPart = parts.slice(4);
   <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("1080")}>1080p</button>
   <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("720")}>720p</button>
   <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("240")}>240p</button>
 </div>
 
         <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
