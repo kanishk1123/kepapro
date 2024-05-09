@@ -21,7 +21,7 @@ const Context = (props) => {
             }
         };
     
-        const intervalId = setInterval(fetchData, 5000); // Fetch data every 5 seconds
+       fetchData() // Fetch data every 5 seconds
     
         return () => {
             console.log("Component unmounted");
