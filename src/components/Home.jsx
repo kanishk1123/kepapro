@@ -61,7 +61,7 @@ const Home = () => {
         <div className="w-[65%] h-full relative">
           <div className="w-full h-[100vh] flex justify-start">
             <div className="w-[90vw] h-[100em] overflow-hidden" style={{...clipPathStyle, position: 'absolute', backdropFilter: 'blur(30px)'}}>
-              <div className="flex flex-col justify-between h-full p-20 bg-[rgba(0,0,0,0.8)]">
+              <div className="flex flex-col justify-between h-[100vw] p-20 bg-[rgba(0,0,0,0.8)]">
                 <div>
                   <p>season 1</p>
                   <h1 className="text-[6vw] font-semibold">name</h1>
@@ -77,7 +77,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <img className="w-ful h-full object-cover justify-center" src="https://i.pinimg.com/736x/51/b6/a3/51b6a3327863d22dbbb355cb137b8025.jpg" alt="" />
+            <img className="w-full h-full object-cover justify-center" src="https://i.pinimg.com/736x/51/b6/a3/51b6a3327863d22dbbb355cb137b8025.jpg" alt="" />
           </div>
         </div>
         <div className="w-[35%] h-full">
