@@ -55,9 +55,6 @@ const Home = () => {
                       className="absolute w-[60%] h-full flex flex-col justify-center items-start pl-[5%]"
                       style={divstyle1}
                     >
-                      <h1 className="text-2xl text-center font-semibold">
-                        anime logo
-                      </h1>
                       <h2 className="text-xl text-center font-semibold">
                         {item.genres}
                       </h2>
