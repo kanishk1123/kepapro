@@ -66,7 +66,7 @@ const desiredPart = parts.slice(4).join('/');
       const filteredByName = data.filter(item => item.animename === name);
       // Find the entry that matches both season and episode within the filtered data
       const filtered = filteredByName.find(item => item.season == seo && item.ep == episode && item.quality == videoquality);
-      console.log(desiredPart,"thisis here")
+      console.log(parts,"thisis here")
       return filtered;
     };
 
