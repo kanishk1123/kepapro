@@ -37,16 +37,8 @@ const Navbar = () => {
 
     document.addEventListener("mousemove", updateCursorPosition);
 
-    const navlinkElement = document.querySelector(".navlink");
-    if (navlinkElement) {
-      navlinkElement.removeEventListener("mousemove", updateCursorPosition);
-    }
-
     return () => {
       document.removeEventListener("mousemove", updateCursorPosition);
-      if (navlinkElement) {
-        navlinkElement.removeEventListener("mousemove", updateCursorPosition);
-      }
     };
   }, []); 
 
@@ -174,7 +166,7 @@ const Navbar = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM6.02332 15.4163C7.49083 17.6069 9.69511 19 12.1597 19C14.6243 19 16.8286 17.6069 18.2961 15.4163C16.6885 13.9172 14.5312 13 12.1597 13C9.78821 13 7.63095 13.9172 6.02332 15.4163ZM12 11C13.6569 11 15 9.65685 15 8C15 6.34315 13.6569 5 12 5C10.3431 5 9 6.34315 9 8C9 9.65685 10.3431 11 12 11Z"></path></svg>
           </NavLink>
         </div>
-        <div className=' bg-transparent h-fit w-[400px] gap-3 -mt-0 flex'>
+        <div className='bg-transparent h-fit w-[400px] gap-3 -mt-0 flex'>
           <button
             onClick={()=>setsearch(!search)}
             className="navlink text-lg w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
