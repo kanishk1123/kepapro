@@ -100,7 +100,13 @@ const desiredPart = parts.slice(4);
          
 
 
-          <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-3 rounded-lg">
+          <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-2 rounded-lg">
+          <div className="flex gap-3">
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("1080")}>1080p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("720")}>720p</button>
+  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
+</div>
+            <div className=" flex flex-col gap-3">
             <img src="" alt="anime logo" />
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
             <h1>live: {live ? "Yes" : "No"}</h1> {/* Display live status */}
@@ -108,13 +114,10 @@ const desiredPart = parts.slice(4);
             <h1>genrec : {filteredData ? filteredData.genres.join(' | ') : ''}</h1>
             <h1>season:  {seo}</h1>
             <h1>ep :  {episode}</h1>
+            </div>
           </div>
         </div>
-        <div className="flex gap-3">
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("1080")}>1080p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("720")}>720p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
-</div>
+       
 
         <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
   {data.map((item, index) => {
