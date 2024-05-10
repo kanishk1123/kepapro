@@ -127,7 +127,7 @@ const desiredPart = parts.slice(4);
           <div className="flex flex-col w-2/3">
           <p>{item.animename}</p>
           <p>season : {item.season} ep : {item.ep} </p>
-          <p>{item.discription}</p>
+          <p>{item.description}</p>
           </div>
         </div>
       </Link>
