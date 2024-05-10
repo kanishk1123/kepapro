@@ -18,14 +18,17 @@ const Watch = () => {
   const [live, setLive] = useState(false); // Assuming this is meant to track if content is live
   const [filteredData, setFilteredData] = useState(null); // Initialize filteredData with null
   const [videoquality,setvideoquality] = useState("720");
+  
+  
   const url = window.location.href;
-
+  
   // Decode the URL
-const decodedUrl = decodeURIComponent(url);
-
-// Extract the desired part
-const parts = decodedUrl.split('/');
-const desiredPart = parts.slice(4);
+  const decodedUrl = decodeURIComponent(url);
+  
+  // Extract the desired part
+  const parts = decodedUrl.split('/');
+  const desiredPart = parts.slice(4);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,7 +68,7 @@ const desiredPart = parts.slice(4);
       // Filter data based on name parameter
       const filteredByName = data.filter(item => item.animename === desiredPart[0]);
       // Find the entry that matches both season and episode within the filtered data
-      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2] && item.quality == videoquality);
+      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2] && item.quality == videoquality  );
       console.log(desiredPart,"thisis here")
       return filtered;
     };
@@ -79,6 +82,7 @@ const desiredPart = parts.slice(4);
       setgenrec(filtered.genrec);
       setquality(filtered.quality);
       setthumnail(filtered.thumnail);
+      setviewseason(filtered.season)
     }
   }, [data, name, seo, episode, videoquality]); // Added 'videoquality' to the dependency array
 
@@ -120,10 +124,10 @@ const desiredPart = parts.slice(4);
 
         <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
   {data.map((item, index) => {
-    return item.animename === name ? (
+    return item.animename === name  ? (
       <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
         <div className="max-w-[440px]  w-[100vw] flex gap-3 rounded p-4 h-[150px] bg-zinc-700">
-          <img src={item.thumnail} className="w-1/2 rounded object-cover" alt="" />
+          <img src={thumnail} className="w-1/2 rounded object-cover" alt="" />
           <div className="flex flex-col w-2/3">
           <p>{item.animename}</p>
           <p>season : {item.season} ep : {item.ep} </p>
