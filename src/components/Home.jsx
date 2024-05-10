@@ -165,7 +165,7 @@ const Home = () => {
                               <div className="">
                                 <Link
                                   to="/"
-                                  className="bg-[rgba(255,0,0,0.5)] text-[3vw] backdrop-blur-lg rounded-full px-4 py-1 "
+                                  className="bg-[rgba(255,0,0,0.5)] text-2xl backdrop-blur-lg rounded-full px-4 py-1 "
                                 >
                                   {" "}
                                   watch now{" "}
@@ -177,7 +177,7 @@ const Home = () => {
                               src={item.thumnail}
                               alt=""
                             />
-                            <div className="absolute text-center top-3/4 text-[2em] font-semibold text-red-700 left-0 z-20 w-full h-2/3 bg-[#000000a6] backdrop-blur-lg">
+                            <div className="absolute text-center top-3/4 text-2xl font-semibold text-red-700 left-0 z-20 w-full h-2/3 bg-[#000000a6] backdrop-blur-lg">
                               {item.animename}
                             </div>
                           </div>
@@ -254,7 +254,7 @@ const Home = () => {
                               <div className="">
                                 <Link
                                   to="/"
-                                  className="bg-[rgba(255,0,0,0.5)] text-[3vw] backdrop-blur-lg rounded-full px-4 py-1 "
+                                  className="bg-[rgba(255,0,0,0.5)] text-2xl backdrop-blur-lg rounded-full px-4 py-1 "
                                 >
                                   {" "}
                                   watch now{" "}
@@ -266,7 +266,7 @@ const Home = () => {
                               src={item.thumnail}
                               alt=""
                             />
-                            <div className="absolute text-center top-3/4 text-[2em] font-semibold text-red-700 left-0 z-20 w-full h-2/3 bg-[#000000a6] backdrop-blur-lg">
+                            <div className="absolute text-center top-3/4 text-2xl font-semibold text-red-700 left-0 z-20 w-full h-2/3 bg-[#000000a6] backdrop-blur-lg">
                               {item.animename}
                             </div>
                           </div>
