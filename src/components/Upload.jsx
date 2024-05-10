@@ -42,13 +42,8 @@ const Login = () => {
       }
 
       // Reset form fields after submission
-      setImage("");
-      setSeason("");
-      setEp(()=>ep+1);
-      setGenric([]);
-      setDisc("");
-      setquality("");
-      setanimename("");
+      setLink("")
+      setEp();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -129,7 +124,7 @@ const Login = () => {
             placeholder="Enter Description"
             value={disc}
             onChange={(e) => setDisc(e.target.value)}
-            name="discription"
+            name="disc"
           />
   
           <div>
