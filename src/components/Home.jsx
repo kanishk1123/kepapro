@@ -348,7 +348,7 @@ const Home = () => {
             </div>
           </div>
         ) : (<div className="w-full p-5 h-fit p-3  ">
-        <div className="w-full p-1 gap-9 bg-zinc-700 rounded flex-wrap flex  h-fit">
+        <div className="w-full p-1 gap-9  rounded flex-wrap flex  h-fit">
           {data
             .filter((item) =>
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
@@ -357,12 +357,12 @@ const Home = () => {
               <div key={index} className="flex flex-col  h-full  w-[130px] rounded-3xl gap-3 justify-center items-start">
                 <img
                   src={filteredItem.thumnail}
-                  className="w-full h-[200px] rounded-3xl bg-red-500"
+                  className="w-full h-[200px] rounded-3xl "
                   alt="animeimage"
                 />
                 <div className="tetx-2xl font-semibold">{filteredItem.animename}</div>
                 <Link 
-                className="bg-red-600 flex justify-center items-center w-1/2 text-[20px] h-[50px] px-2 py-1 rounded-full "
+                className=" flex justify-center items-center w-1/2 text-[20px] h-[50px] px-2 py-1 rounded-full "
                  to={`/watch/${filteredItem.animename}/${filteredItem.season}/${filteredItem.ep}`}>watch</Link>
               </div>
               

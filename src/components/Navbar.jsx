@@ -179,7 +179,7 @@ const Navbar = ({setsearchResult,resultsearch}) => {
             <input 
             onChange={(e)=>setsearchResult(e.target.value)}
             value={resultsearch}
-            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400' style={widht} placeholder='search' type="text" />
+            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[300px]' style={widht} placeholder='search' type="text" />
            
           </form>
         </div>
