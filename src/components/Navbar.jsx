@@ -67,7 +67,7 @@ const Navbar = ({setsearchResult,resultsearch}) => {
   };
 
   return (
-    <nav className={`flex text-2xl justify-between h-18 py-3 text-white overflow-hidden bg-black relative ${search ? 'max-md:h-[200px]' : 'max-md:h-18'}`}>
+    <nav className={`flex text-2xl justify-between h-18 py-3 text-white overflow-hidden bg-black relative `}>
       <div className={`bg-red-600 duration-100 absolute h-5 w-5 rounded-full z-1 border-red-600`} style={cursorStyle}></div>
       <div className='p1 h-14 w-[330px] flex text-2xl absolute z-30 gap-8 justify-evenly px-3 py-3 text-white overflow-hidden bg-transparent relative'>
         <NavLink
@@ -179,7 +179,7 @@ const Navbar = ({setsearchResult,resultsearch}) => {
             <input 
             onChange={(e)=>setsearchResult(e.target.value)}
             value={resultsearch}
-            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[300px]' style={widht} placeholder='search' type="text" />
+            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[200px]' style={widht} placeholder='search' type="text" />
            
           </form>
         </div>
