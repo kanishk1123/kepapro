@@ -347,7 +347,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        ) : (<div className="w-full p-5 h-fit  ">
+        ) : (<div className="w-full p-5 h-fit p-3  ">
         <div className="w-[150px] p-1  gap-3 bg-zinc-700 rounded flex-wrap flex flex-col h-fit">
           {data
             .filter((item) =>
