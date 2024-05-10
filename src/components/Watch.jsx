@@ -68,7 +68,7 @@ const Watch = () => {
       // Filter data based on name parameter
       const filteredByName = data.filter(item => item.animename === desiredPart[0]);
       // Find the entry that matches both season and episode within the filtered data
-      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2]  );
+      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2] &&  item.quality == videoquality );
       console.log(desiredPart,"thisis here")
       return filtered;
     };
