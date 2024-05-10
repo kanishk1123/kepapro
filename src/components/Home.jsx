@@ -15,7 +15,7 @@ import axios from "../utils/Axios";
 
 const Home = () => {
   const [data] = useContext(detailsContext);
-  const [resultsearch, setsearchResult] = useState("black");
+  const [resultsearch, setsearchResult] = useState();
 
   const discription = data.discription;
 
@@ -33,9 +33,8 @@ const Home = () => {
   return (
     <>
       <div className="bg-neutral-900 w-full  h-fit pb-[40px] text-white">
-        <Navbar />
-        <button onClick={console.log(resultsearch)}>mabcnkbc</button>
-        {resultsearch == undefined ? (
+        <Navbar setsearchResult={setsearchResult} resultsearch={resultsearch} />
+        {resultsearch == undefined || resultsearch == "" ? (
           <div>
             <div className="h-[100vh] relative">
               <div
@@ -361,20 +360,23 @@ const Home = () => {
               </div>
             </div>
           </div>
-        ) : (<div className="w-full h-fit px-3">
+        ) : (<div className="w-full p-5 h-fit ">
         <div className="w-[200px] p-3 bg-zinc-700 rounded flex flex-col h-[300px]">
           {data
             .filter((item) =>
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <div key={index}>
+              <div key={index} className="flex flex-col rounded-3xl gap-3 justify-center items-center">
                 <img
                   src={filteredItem.thumnail}
-                  className="w-full h-3/4 rounded"
-                  alt=""
+                  className="w-full h-3/4 rounded-4xl"
+                  alt="animeimage"
                 />
                 <div>{filteredItem.animename}</div>
+                <Link 
+                className="bg-red-600 px-2 py-1 rounded-full "
+                 to={`/watch/${filteredItem.animename}/${filteredItem.season}/${filteredItem.ep}`}>watch now</Link>
               </div>
             ))}
         </div>
