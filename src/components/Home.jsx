@@ -367,7 +367,7 @@ const Home = () => {
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <div key={index} className="flex flex-col h-[400px] w-fit rounded-3xl gap-3 justify-center items-center">
+              <div key={index} className="flex flex-col h-[400px] w-[200px] rounded-3xl gap-3 justify-center items-center">
                 <img
                   src={filteredItem.thumnail}
                   className="w-full h-3/4 rounded-3xl"
