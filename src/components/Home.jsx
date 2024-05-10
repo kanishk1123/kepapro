@@ -36,7 +36,7 @@ const Home = () => {
         <Navbar setsearchResult={setsearchResult} resultsearch={resultsearch} />
         {resultsearch == undefined || resultsearch == "" ? (
           <div>
-            <div className="h-[100vh] relative">
+            <div className="h-fit relative">
               <div
                 style={divstyle}
                 className="absolute w-full z-20  h-[10%] top-0 bg-black"
@@ -53,7 +53,7 @@ const Home = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper h-full z-1 max-sm:h-[70vh]"
+                className="mySwiper h-full z-1 max-sm:h-[50vh]"
               >
                 {data.slice(0, 5).map((item, index) => (
                   <Link key={index} to={``}>
@@ -66,7 +66,7 @@ const Home = () => {
                             <div className="w-[65%] h-full relative">
                               <div className="w-full h-full flex justify-start">
                                 <div
-                                  className="w-[90vw] h-full max-sm:w-[100%] overflow-hidden"
+                                  className="w-[90vw] h-full max-sm:w-[150%] overflow-hidden"
                                   style={{
                                     ...clipPathStyle,
                                     position: "absolute",
@@ -106,12 +106,12 @@ const Home = () => {
                                     </div>
                                   </div>
                                 </div>
-                                <img className={item.thumnail} alt="" />
+                                <img className="bg-red-600 w-full h-full object-cover" src={item.thumnail} alt="" />
                               </div>
                             </div>
-                            <div className="w-[35%] max-sm:w-[0em] h-full">
+                            <div className="w-[35%] max-sm:w-[70vw] h-full">
                               <img
-                                className="w-full h-full object-cover"
+                                className="w- bg-red-500 h-full object-cover"
                                 src={item.thumnail}
                                 alt=""
                               />
