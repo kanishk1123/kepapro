@@ -82,7 +82,6 @@ const Watch = () => {
       setgenrec(filtered.genrec);
       setquality(filtered.quality);
       setthumnail(filtered.thumnail);
-      setviewseason(filtered.season)
     }
   }, [data, name, seo, episode, videoquality]); // Added 'videoquality' to the dependency array
 
