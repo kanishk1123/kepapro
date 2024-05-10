@@ -42,10 +42,9 @@ const Login = () => {
       }
 
       // Reset form fields after submission
-      setLink("");
       setImage("");
       setSeason("");
-      setEp("");
+      setEp(()=>ep+1);
       setGenric([]);
       setDisc("");
       setquality("");
@@ -130,7 +129,7 @@ const Login = () => {
             placeholder="Enter Description"
             value={disc}
             onChange={(e) => setDisc(e.target.value)}
-            name="disc"
+            name="discription"
           />
   
           <div>

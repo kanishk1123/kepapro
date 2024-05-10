@@ -107,13 +107,12 @@ const desiredPart = parts.slice(4);
   <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
 </div>
             <div className=" flex flex-col gap-3">
-            <img src="" alt="anime logo" />
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
-            <h1>live: {live ? "Yes" : "No"}</h1> {/* Display live status */}
+            <h1>ON Going : {live ? "Yes" : "No"}</h1> {/* Display live status */}
             <h1>Discription :  {filteredData ? filteredData.discription : ''}</h1>
-            <h1>genrec : {filteredData ? filteredData.genres.join(' | ') : ''}</h1>
-            <h1>season:  {seo}</h1>
-            <h1>ep :  {episode}</h1>
+            <h1>Genrec : {filteredData ? filteredData.genres.join(' | ') : ''}</h1>
+            <h1>Season:  {seo}</h1>
+            <h1>Episode :  {episode}</h1>
             </div>
           </div>
         </div>
