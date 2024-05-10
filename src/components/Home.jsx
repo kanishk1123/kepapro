@@ -360,24 +360,25 @@ const Home = () => {
               </div>
             </div>
           </div>
-        ) : (<div className="w-full p-5 h-fit ">
-        <div className="w-[200px] p-3 bg-zinc-700 rounded flex flex-col h-fit">
+        ) : (<div className="w-full p-5 h-fit  ">
+        <div className="w-[150px] p-1  gap-3 bg-zinc-700 rounded flex-wrap flex flex-col h-fit">
           {data
             .filter((item) =>
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <div key={index} className="flex flex-col h-[30vw]  w-[230px] rounded-3xl gap-3 justify-center items-center">
+              <div key={index} className="flex flex-col   h-[200px]  w-[130px] rounded-3xl gap-3 justify-center items-start">
                 <img
                   src={filteredItem.thumnail}
-                  className="w-fit h-3/4 rounded-3xl bg-red-500"
+                  className="w-full h-[200px] rounded-3xl bg-red-500"
                   alt="animeimage"
                 />
                 <div className="tetx-2xl font-semibold">{filteredItem.animename}</div>
                 <Link 
-                className="bg-red-600 px-2 py-1 rounded-full "
-                 to={`/watch/${filteredItem.animename}/${filteredItem.season}/${filteredItem.ep}`}>watch now</Link>
+                className="bg-red-600 flex justify-center items-center w-1/2 text-[20px] h-[50px] px-2 py-1 rounded-full "
+                 to={`/watch/${filteredItem.animename}/${filteredItem.season}/${filteredItem.ep}`}>watch</Link>
               </div>
+              
             ))}
         </div>
       </div>

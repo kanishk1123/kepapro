@@ -63,7 +63,7 @@ const Navbar = ({setsearchResult,resultsearch}) => {
   };
 
   const widht = {
-    width: `${search ? '13vw' : '0px'}`,
+    width: `${search ? '28vw' : '0px'}`,
   };
 
   return (
@@ -172,21 +172,15 @@ const Navbar = ({setsearchResult,resultsearch}) => {
             onClick={()=>setsearch(!search)}
             className="navlink text-lg w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+            <Link to="/">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg></Link>
           </button>
           <form action=""  className={`p2 flex justify-center duration-600 gap-2 items-center`} onSubmit={(e)=>submithandler(e)} value={result} onChange={(e)=>setResult(e.target.value)} >
             <input 
             onChange={(e)=>setsearchResult(e.target.value)}
             value={resultsearch}
-            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400' style={widht} placeholder='search here' type="text" />
-            <Link
-              to="/"
-              onClick={()=>setsearch(!search)}
-
-              className="navlink bg-[rgba(45,42,42,0.48)] ml-[2px] rounded-xl px-2 py-2 -m-2 z-99"
-            >
-              Search
-            </Link>
+            className='px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400' style={widht} placeholder='search' type="text" />
+           
           </form>
         </div>
       </div>
