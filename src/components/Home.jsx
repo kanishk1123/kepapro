@@ -53,27 +53,27 @@ const Home = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper h-full z-1"
+                className="mySwiper h-full z-1 max-sm:h-[70vh]"
               >
                 {data.slice(0, 5).map((item, index) => (
                   <Link key={index} to={``}>
-                    <SwiperSlide className="relative w-full h-full">
+                    <SwiperSlide className="relative w-full h-full  ">
                       <Link
                         to={`/watch/${item.animename}/${item.season}/${item.ep}`}
                       >
-                        <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-screen">
+                        <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-screen  ">
                           <div className="w-full h-full flex justify-between">
                             <div className="w-[65%] h-full relative">
-                              <div className="w-full h-[100vh] flex justify-start">
+                              <div className="w-full h-full flex justify-start">
                                 <div
-                                  className="w-[90vw] h-[100em] overflow-hidden"
+                                  className="w-[90vw] h-full max-sm:w-[100%] overflow-hidden"
                                   style={{
                                     ...clipPathStyle,
                                     position: "absolute",
                                     backdropFilter: "blur(30px)",
                                   }}
                                 >
-                                  <div className="flex flex-col justify-between h-[100vh]  p-20 bg-[rgba(0,0,0,0.8)]">
+                                  <div className="flex flex-col  justify-between h-full  p-20 bg-[rgba(0,0,0,0.8)]">
                                     <div className="flex flex-col gap-3">
                                       <p>season {item.season}</p>
                                       <h1 className="text-[6vw] font-semibold">
@@ -109,7 +109,7 @@ const Home = () => {
                                 <img className={item.thumnail} alt="" />
                               </div>
                             </div>
-                            <div className="w-[35%] h-full">
+                            <div className="w-[35%] max-sm:w-[0em] h-full">
                               <img
                                 className="w-full h-full object-cover"
                                 src={item.thumnail}
