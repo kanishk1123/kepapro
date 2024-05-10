@@ -361,7 +361,7 @@ const Home = () => {
             </div>
           </div>
         ) : (<div className="w-full p-5 h-fit ">
-        <div className="w-[200px] p-3 bg-zinc-700 rounded flex flex-col h-[300px]">
+        <div className="w-[200px] p-3 bg-zinc-700 rounded flex flex-col h-fit">
           {data
             .filter((item) =>
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
