@@ -348,13 +348,13 @@ const Home = () => {
             </div>
           </div>
         ) : (<div className="w-full p-5 h-fit p-3  ">
-        <div className="w-[150px] p-1  gap-3 bg-zinc-700 rounded flex-wrap flex flex-col h-fit">
+        <div className="w-full p-1 gap-9 bg-zinc-700 rounded flex-wrap flex  h-fit">
           {data
             .filter((item) =>
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <div key={index} className="flex flex-col flex-wrap  h-full  w-[130px] rounded-3xl gap-3 justify-center items-start">
+              <div key={index} className="flex flex-col  h-full  w-[130px] rounded-3xl gap-3 justify-center items-start">
                 <img
                   src={filteredItem.thumnail}
                   className="w-full h-[200px] rounded-3xl bg-red-500"
