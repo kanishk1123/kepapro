@@ -125,7 +125,7 @@ const Watch = () => {
   {data.map((item, index) => {
     return item.animename === name  ? (
       <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
-        <div className="max-w-[440px]  w-[100vw] flex gap-3 rounded p-4 h-[150px] bg-zinc-700">
+        <div className="max-w-[440px]  w-[100vw] flex gap-3 rounded p-4 h-fit bg-zinc-700">
           <img src={thumnail} className="w-1/2 rounded object-cover" alt="" />
           <div className="flex flex-col w-2/3">
           <p>{item.animename}</p>
