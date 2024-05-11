@@ -43,7 +43,7 @@ const Login = () => {
 
       // Reset form fields after submission
       setLink("")
-      setEp();
+      setEp("");
     } catch (error) {
       console.error("Error:", error);
     }

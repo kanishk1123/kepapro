@@ -121,18 +121,16 @@ const Watch = () => {
         </div>
        
 
-        <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
+        <div className="w-fit  h-fit bg-black p-5 flex flex-wrap rounded gap-2">
   {data.map((item, index) => {
     return item.animename === name  ? (
       <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
-        <div className="max-w-[440px]  w-[100vw] flex gap-3 rounded p-4 h-fit bg-zinc-700">
-          <img src={thumnail} className="w-1/2 rounded object-cover" alt="" />
-          <div className="flex flex-col w-2/3">
-          <p>{item.animename}</p>
+        <div className="  w-fit flex gap-3 rounded p-4 h-fit bg-zinc-700">
+        
           <p>season : {item.season} ep : {item.ep} </p>
-          <p>{item.description}</p>
+          
           </div>
-        </div>
+       
       </Link>
     ) : null;
   })}
