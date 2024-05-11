@@ -11,33 +11,25 @@ const AllAnime = () => {
   return (
     <>
       <Navbar />
-      {data.map((item, index) =>
-        (item.popular || item.trending === type) ? (
-          <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
-            <div className='bg-neutral-900 w-full h-fit text-white' key={index}>
-              <div className='w-[600px] h-fit p-5 flex flex-wrap gap-10'>
-                <div className='bg-zinc-800 flex flex-shrink-0 p-5 h-fit rounded-xl w-[30%] gap-10'>
-                  <div className='w-1/2'>
-                    <img
-                      className='w-[400px]  h-2/3 object-cover rounded-2xl'
-                      src={item.thumnail}
-                      alt={`Image of ${item.name}`}
-                    />
-                    <h1 className='text-2xl font-semibold'>{item.animename}</h1>
-                  </div>
-                  <div className='w-[40%] text-center'>
-                   
-                  </div>
-                </div>
+     <div className='w-full h-fit flex flex-wrap p-4 gap-3'>
+     {data.map((item,index) =>
+        (item.popular || item.trending == type) ? (
+            <div key={index} className="flex flex-col  h-full  w-[130px] rounded-3xl gap-3 justify-center items-start">
+                <img
+                  src={item.thumnail}
+                  className="w-full h-[200px] rounded-3xl "
+                  alt="animeimage"
+                />
+                <div className="tetx-2xl font-semibold">{item.animename}</div>
+                <Link 
+                className=" flex justify-center items-center w-1/2 text-[20px] h-[50px] px-2 py-1 rounded-full "
+                 to={`/watch/${item.animename}/${item.season}/${item.ep}`}>watch</Link>
               </div>
-            </div>
-          </Link>
         ) : (
-          <div className='w-full h-[75vh] bg-zinc-800' key={index}>
-            <p className='text-5xl font-semibold text-center'>Nothing for now</p>
-          </div>
+          null
         )
       )}
+     </div>
       <Footer />
     </>
   );
