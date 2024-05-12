@@ -11,7 +11,7 @@ const Login = () => {
     ep: "",
     description: "",
     genres: [],
-    thumbnail: "",
+    thumnail: "",
     animename: ""
   });
 
@@ -35,7 +35,7 @@ const Login = () => {
           ep: "",
           description: "",
           genres: [],
-          thumbnail: "",
+          thumnail: "",
           animename: ""
         });
       } else {
@@ -140,8 +140,8 @@ const Login = () => {
               className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
               placeholder="Enter Thumbnail Link"
               value={formData.thumbnail}
-              onChange={(e) => setFormData({ ...formData, thumbnail: e.target.value })}
-              name="thumbnail"
+              onChange={(e) => setFormData({ ...formData, thumnail: e.target.value })}
+              name="thumnail"
             />
             <input
               type="number"
