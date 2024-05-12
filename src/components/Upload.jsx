@@ -7,12 +7,7 @@ const Login = () => {
     links: [""],
     languages: [""],
     qualities: [""],
-    season: "",
     ep: "",
-    description: "",
-    genres: [],
-    thumnail: "",
-    animename: ""
   });
 
   const handleSubmit = async (e) => {
