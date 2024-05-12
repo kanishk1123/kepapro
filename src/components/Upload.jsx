@@ -104,6 +104,7 @@ const Login = () => {
                   value={formData.links[index]}
                   onChange={(e) => handleLinkChange(index, e)}
                   placeholder="Enter Video Link"
+                  className="bg-transparent"
                 />
                 <div>
                   <label>Language:</label>
