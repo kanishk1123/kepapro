@@ -9,9 +9,9 @@ const Login = () => {
   const [disc, setDisc] = useState("");
   const [genric, setGenric] = useState([]);
   const [image, setImage] = useState("");
-  const [quality, setquality] = useState("");
-  const [animename, setanimename] = useState("");
-  const [temp, settemp] = useState("");
+  const [quality, setQuality] = useState("");
+  const [animename, setAnimename] = useState("");
+  const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
     links: [],
     languages: [],
@@ -35,21 +35,29 @@ const Login = () => {
 
       if (response.data) {
         console.log("Video details added successfully.");
+        // Reset all form fields after successful submission
+        setFormData({
+          links: [],
+          languages: [],
+          season: "",
+          ep: "",
+          description: "",
+          genres: [],
+          thumbnail: "",
+          qualities: [],
+          animename: "",
+        });
+        setLink("");
+        setImage("");
+        setSeason("");
+        setEp("");
+        setAnimename("");
+        setDisc("");
+        setGenric([]);
+        setQuality("");
       } else {
         console.error("Failed to add video details.");
       }
-
-      setFormData({
-        links: [],
-        languages: [],
-        season: "",
-        ep: "",
-        description: "",
-        genres: [],
-        thumbnail: "",
-        qualities: [],
-        animename: ""
-      });
     } catch (error) {
       console.error("Error:", error);
     }
@@ -84,7 +92,7 @@ const Login = () => {
 
   return (
     <div>
-      <input type="text" name="" id="" className="w-1/4 m-4 bg-transparent " placeholder="enter here" value={temp} onChange={(e)=>settemp(e.target.value)}/>
+      <input type="text" name="" id="" className="w-1/4 m-4 bg-transparent " placeholder="enter here" value={temp} onChange={(e)=>setTemp(e.target.value)}/>
 
       {temp === "cpsoni@321" ?
         (<div className="bg-neutral-900 text-white">
@@ -152,7 +160,7 @@ const Login = () => {
             className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
             placeholder="Enter anime name"
             value={animename}
-            onChange={(e) => setanimename(e.target.value)}
+            onChange={(e) => setAnimename(e.target.value)}
             name="animename"
           />
           <textarea
