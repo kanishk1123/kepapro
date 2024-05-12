@@ -13,41 +13,75 @@ const Login = () => {
   const [quality, setquality] = useState("");
   const [animename, setanimename] = useState("");
   const [temp, settemp] = useState("")
-  const handleSubmit = async (e) => {
+  const [formData, setFormData] = useState({
+    links: [],
+    languages: [],
+    season: "",
+    ep: "",
+    description: "",
+    genres: [],
+    thumbnail: "",
+    qualities: [],
+    animename: ""
+});
+
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const send = {
-        link,
-        image,
-        season,
-        ep,
-        genric,
-        disc,
-        quality,
-        animename,
-      };
+        const response = await axios.post("/addlink", formData, {
+            withCredentials: true,
+        });
+        console.log(response.data);
 
-      const response = await axios.post("/addlink", send, {
-        withCredentials: true,
-      });
-      console.log(response.data);
+        if (response.data) {
+            console.log("Video details added successfully.");
+        } else {
+            console.error("Failed to add video details.");
+        }
 
-      if (response.data) {
-        // Redirect or show success message
-        console.log("Video details added successfully.");
-      } else {
-        // Handle failure
-        console.error("Failed to add video details.");
-      }
-
-      // Reset form fields after submission
-      setLink("")
-      setEp("");
+        setFormData({
+            links: [],
+            languages: [],
+            season: "",
+            ep: "",
+            description: "",
+            genres: [],
+            thumbnail: "",
+            qualities: [],
+            animename: ""
+        });
     } catch (error) {
-      console.error("Error:", error);
+        console.error("Error:", error);
     }
-  };
+};
+
+const handleAddQuality = () => {
+    setFormData({
+        ...formData,
+        links: [...formData.links, ""],
+        languages: [...formData.languages, ""],
+        qualities: [...formData.qualities, ""]
+    });
+};
+
+const handleLinkChange = (index, e) => {
+    const updatedLinks = [...formData.links];
+    updatedLinks[index] = e.target.value;
+    setFormData({ ...formData, links: updatedLinks });
+};
+
+const handleLanguageChange = (index, e) => {
+    const updatedLanguages = [...formData.languages];
+    updatedLanguages[index] = e.target.value;
+    setFormData({ ...formData, languages: updatedLanguages });
+};
+
+const handleQualityChange = (index, e) => {
+    const updatedQualities = [...formData.qualities];
+    updatedQualities[index] = e.target.value;
+    setFormData({ ...formData, qualities: updatedQualities });
+};
 
   return (
     <div>
@@ -67,14 +101,31 @@ const Login = () => {
           >
             Add Link
           </button>
-          <input
-            type="text"
-            className="bg-transparent w-[70vw] focus:bg-transparent  placeholder:text-zinc-400"
-            placeholder="Enter Video Link"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
-            name="link"
-          />
+          {formData.links.map((link, index) => (
+    <div key={index} className="flex gap-2 *:bg-transparent">
+        <input type="text" value={formData.links[index]} onChange={(e) => handleLinkChange(index, e)} placeholder="Enter Video Link" />
+        <div>
+            <label>Language:</label>
+            <select value={formData.languages[index]} onChange={(e) => handleLanguageChange(index, e)} className="bg-black" >
+                <option value="">Select Language</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+            </select>
+        </div>
+        <div>
+            <label>Quality:</label>
+            <select value={formData.qualities[index]} onChange={(e) => handleQualityChange(index, e)} className="bg-black" >
+                <option value="">Select Quality</option>
+                <option value="1080">1080p</option>
+                <option value="720">720p</option>
+                <option value="480">480p</option>
+            </select>
+        </div>
+    </div>
+))}
+
+                <button type="button" onClick={handleAddQuality}>Add quantity</button>
+                <button type="submit">Submit</button>
   
           <input
             type="text"
@@ -127,23 +178,7 @@ const Login = () => {
             name="disc"
           />
   
-          <div>
-            <label htmlFor="quality" >Choose a video quality:</label>
-            <select name="quality" className="bg-transparent" onChange={(e)=>setquality(e.target.value)} id="quality">
-              <option className="bg-black" value="1080">
-                1080
-              </option>
-              <option className="bg-black" value="720">
-                720
-              </option>
-              <option className="bg-black" value="480">
-                480
-              </option>
-              <option className="bg-black" value="240">
-                240
-              </option>
-            </select>
-          </div>
+          
   
           <div className="flex h-1/2 w-full gap-4 flex-wrap pl-[2vw]">
             <iframe
