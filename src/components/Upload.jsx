@@ -4,10 +4,15 @@ import axios from "../utils/Axios";
 const Login = () => {
   const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
-    links: [""],
-    languages: [""],
-    qualities: [""],
-    ep: "",
+      links: [""],
+          languages: [""],
+          qualities: [""],
+          season: "",
+          ep: "",
+          description: "",
+          genres: [],
+          thumnail: "",
+          animename: ""
   });
 
   const handleSubmit = async (e) => {
@@ -26,12 +31,7 @@ const Login = () => {
           links: [""],
           languages: ["Hindi"],
           qualities: ["1080"],
-          season: "",
           ep: "",
-          description: "",
-          genres: [],
-          thumnail: "",
-          animename: ""
         });
       } else {
         console.error("Failed to add video details.");
