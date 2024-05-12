@@ -5,8 +5,8 @@ const Login = () => {
   const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
     links: [""],
-    languages: ["Hindi"],
-    qualities: ["1080"],
+    languages: [""],
+    qualities: [""],
     season: "",
     ep: "",
     description: "",
@@ -17,13 +17,13 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post("/addlink", formData, {
         withCredentials: true,
       });
       console.log(response.data);
-
+  
       if (response.data) {
         console.log("Video details added successfully.");
         // Reset form data after successful submission
@@ -45,6 +45,7 @@ const Login = () => {
       console.error("Error:", error);
     }
   };
+  
 
   const handleAddQuality = () => {
     setFormData({
