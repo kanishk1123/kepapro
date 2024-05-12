@@ -5,8 +5,8 @@ const Login = () => {
   const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
     links: [""],
-    languages: [""],
-    qualities: [""],
+    languages: ["Hindi"],
+    qualities: ["1080"],
     season: "",
     ep: "",
     description: "",
@@ -93,7 +93,6 @@ const Login = () => {
             <button
               type="submit"
               className="bg-blue-900 px-2 py-1 rounded"
-              onClick={() => setScale(!scale)}
             >
               Add Link
             </button>
@@ -134,6 +133,52 @@ const Login = () => {
               Add Quality
             </button>
             {/* Other input fields */}
+            <input
+              type="text"
+              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Thumbnail Link"
+              value={formData.thumbnail}
+              onChange={(e) => setFormData({ ...formData, thumbnail: e.target.value })}
+              name="thumbnail"
+            />
+            <input
+              type="number"
+              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Season Number"
+              value={formData.season}
+              onChange={(e) => setFormData({ ...formData, season: e.target.value })}
+              name="season"
+            />
+            <input
+              type="number"
+              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Episode Number"
+              value={formData.ep}
+              onChange={(e) => setFormData({ ...formData, ep: e.target.value })}
+              name="ep"
+            />
+            <input
+              type="text"
+              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter anime name"
+              value={formData.animename}
+              onChange={(e) => setFormData({ ...formData, animename: e.target.value })}
+              name="animename"
+            />
+            <textarea
+              className="bg-transparent w-[70vw] h-[100px] focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Genres (separated by commas)"
+              value={formData.genres.join(",")}
+              onChange={(e) => setFormData({ ...formData, genres: e.target.value.split(",") })}
+              name="genres"
+            />
+            <textarea
+              className="bg-transparent w-[70vw] h-[100px] focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Description"
+              value={formData.description}
+              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              name="description"
+            />
           </form>
         </div>
       )}
