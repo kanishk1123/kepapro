@@ -119,6 +119,7 @@ const Login = () => {
                     onChange={(e) => handleQualityChange(index, e)}
                     className="bg-black"
                   >
+                     <option value="null">select your quality</option>
                     <option value="1080">1080p</option>
                     <option value="720">720p</option>
                     <option value="480">480p</option>
