@@ -28,10 +28,15 @@ const Login = () => {
         console.log("Video details added successfully.");
         // Reset form data after successful submission
         setFormData({
-          links: [""],
-          languages: ["Hindi"],
-          qualities: ["1080"],
+           links: [""],
+          languages: [""],
+          qualities: [""],
+          season: "",
           ep: "",
+          description: "",
+          genres: [],
+          thumnail: "",
+          animename: ""
         });
       } else {
         console.error("Failed to add video details.");
