@@ -113,6 +113,7 @@ const Login = () => {
                     onChange={(e) => handleLanguageChange(index, e)}
                     className="bg-black"
                   >
+                    <option value="null">select your language</option>
                     <option value="Hindi">Hindi</option>
                     <option value="English">English</option>
                   </select>
