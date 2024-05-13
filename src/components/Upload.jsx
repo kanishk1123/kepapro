@@ -166,7 +166,7 @@ const Login = () => {
             <textarea
               className="bg-transparent w-[70vw] h-[100px] focus:bg-transparent  placeholder:text-zinc-400"
               placeholder="Enter Genres (separated by commas)"
-               value={formData.genres.join(",")}
+               value={formData.genres}
               onChange={(e) => setFormData({ ...formData, genres: e.target.value.split(",") })}
               name="genres"
             />
