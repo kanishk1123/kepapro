@@ -27,7 +27,7 @@ const Routing = () => {
       <Route path='/adminreg' element={<Adminreg/>} />
       <Route path='/adminlogin' element={<Adminlogin/>}/>
       <Route path='/upload' element={<Upload/>} />
-       <Route path='/ads.txt' element={<Ads/>
+       <Route path='/ads.txt' element={<Ads/>} />
 
     </Routes>
   )
