@@ -107,7 +107,6 @@ const Watch = () => {
          
             <div className=" flex flex-col gap-3">
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
-            <h1>ON Going : {live ? "Yes" : "No"}</h1> {/* Display live status */}
             <h1>Discription :  {filteredData ? filteredData.description : ''}</h1>
             <h1>Genrec : {filteredData ? filteredData.genres.join(' | ') : ''}</h1>
             <h1>Season:  {seo}</h1>
