@@ -91,6 +91,10 @@ const Watch = () => {
         <Navbar />
         <div className="h-fit pb-5 w-full p-4 flex flex-wrap gap-4">
           {/* Conditional rendering of iframe */}
+          <div className="w-[930px] overflow-hidden min-w-[300px] h-[60vw] max-h-[400px] bg-red-500 rounded-lg relative">
+
+<div className="w-full h-[50px] top-3 text-black left-[90%] bg-transparent absolute z-20"></div>
+ 
           {
            <iframe
            className="w-[930px] min-w-[300px] h-[60vw] max-h-[400px] rounded-lg"
@@ -100,7 +104,7 @@ const Watch = () => {
            allowfullscreen="true"
          ></iframe>
          }
-         
+          </div>
 
 
           <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-2 rounded-lg">
