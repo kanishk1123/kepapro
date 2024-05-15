@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "../utils/Axios";
 
 const Login = () => {
-  const [temp, setTemp] = useState("cpsoni@321");
+  const [temp, setTemp] = useState("");
   const [formData, setFormData] = useState({
       links: [""],
           languages: [""],
