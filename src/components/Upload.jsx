@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "../utils/Axios";
 
 const Login = () => {
-  const [temp, setTemp] = useState("");
+  const [temp, setTemp] = useState("cpsoni@321");
   const [formData, setFormData] = useState({
       links: [""],
           languages: [""],
@@ -51,8 +51,9 @@ const Login = () => {
     setFormData({
       ...formData,
       links: [...formData.links, ""],
-      languages: [...formData.languages, "Hindi"],
-      qualities: [...formData.qualities, "1080"]
+      languages: [...formData.languages, ""],
+      qualities: [...formData.qualities, ""],
+      ep:[...formData.ep,""]
     });
   };
 
@@ -72,6 +73,11 @@ const Login = () => {
     const updatedQualities = [...formData.qualities];
     updatedQualities[index] = e.target.value;
     setFormData({ ...formData, qualities: updatedQualities });
+  };
+  const handleepChange = (index, e) => {
+    const updatedep = [...formData.ep];
+    updatedep[index] = e.target.value;
+    setFormData({ ...formData, ep: updatedep });
   };
 
   return (
@@ -131,6 +137,14 @@ const Login = () => {
                     <option value="480">480p</option>
                   </select>
                 </div>
+                <input
+              type="number"
+              className="bg-transparent  h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter Episode Number"
+              value={formData.ep[index]}
+              onChange={(e) => handleepChange(index, e)}
+              name="ep"
+            />
               </div>
             ))}
             <button type="button" onClick={handleAddQuality}>
@@ -153,14 +167,7 @@ const Login = () => {
               onChange={(e) => setFormData({ ...formData, season: e.target.value })}
               name="season"
             />
-            <input
-              type="number"
-              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
-              placeholder="Enter Episode Number"
-              value={formData.ep}
-              onChange={(e) => setFormData({ ...formData, ep: e.target.value })}
-              name="ep"
-            />
+            
             <input
               type="text"
               className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
