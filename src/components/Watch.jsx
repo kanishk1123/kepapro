@@ -68,7 +68,7 @@ const Watch = () => {
       // Filter data based on name parameter
       const filteredByName = data.filter(item => item.animename === desiredPart[0]);
       // Find the entry that matches both season and episode within the filtered data
-      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2] &&  item.quality == videoquality );
+      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2]  );
       console.log(desiredPart,"thisis here")
       return filtered;
     };
@@ -104,11 +104,7 @@ const Watch = () => {
 
 
           <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-2 rounded-lg">
-          <div className="flex gap-3">
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("1080")}>1080p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("720")}>720p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality("480")}>480p</button>
-</div>
+         
             <div className=" flex flex-col gap-3">
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
             <h1>ON Going : {live ? "Yes" : "No"}</h1> {/* Display live status */}
