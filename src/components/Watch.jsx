@@ -97,7 +97,7 @@ const Watch = () => {
  
           {
            <iframe
-           className="w-[930px] min-w-[300px] h-[60vw] max-h-[400px] rounded-lg"
+           className="w-full h-full rounded-lg z-10"
            src={video}
            scrolling="no"
            frameborder="0"
