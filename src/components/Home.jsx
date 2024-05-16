@@ -61,7 +61,7 @@ const Home = () => {
                       <Link
                         to={`/watch/${item.animename}/${item.season}/${item.ep}`}
                       >
-                        <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-screen  ">
+                        <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-full  ">
                           <div className="w-full h-full flex justify-between">
                             <div className="w-[65%] h-full relative">
                               <div className="w-full h-full flex justify-start">
