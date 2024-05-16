@@ -96,7 +96,7 @@ const Home = () => {
                                         />
                                       </svg>
                                       <pre className="font-semibold text-2xl">
-                                        30%
+                                        {item.rating}%
                                       </pre>
                                     </div>
                                     <div className="w-full h-auto flex flex-wrap">
