@@ -111,7 +111,7 @@ const Home = () => {
                             </div>
                             <div className="w-[25%] max-sm:w-[70vw] h-full">
                               <img
-                                className="w- bg-red-500 h-full object-cover"
+                                className="w-full bg-red-500 h-full object-cover"
                                 src={item.thumnail}
                                 alt=""
                               />
