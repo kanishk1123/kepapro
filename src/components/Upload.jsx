@@ -12,7 +12,8 @@ const Login = () => {
           description: "",
           genres: [],
           thumnail: "",
-          animename: ""
+          animename: "",
+          rating: "",
   });
 
   const handleSubmit = async (e) => {
@@ -36,7 +37,8 @@ const Login = () => {
           description: "",
           genres: [],
           thumnail: "",
-          animename: ""
+          animename: "",
+          rating:"",
         });
       } else {
         console.error("Failed to add video details.");
@@ -175,6 +177,14 @@ const Login = () => {
               value={formData.animename}
               onChange={(e) => setFormData({ ...formData, animename: e.target.value })}
               name="animename"
+            />
+            <input
+              type="number"
+              className="bg-transparent w-[70vw] h-5 focus:bg-transparent  placeholder:text-zinc-400"
+              placeholder="Enter anime rating"
+              value={formData.rating}
+              onChange={(e) => setFormData({ ...formData, rating: e.target.value })}
+              name="rating"
             />
             <textarea
               className="bg-transparent w-[70vw] h-[100px] focus:bg-transparent  placeholder:text-zinc-400"
