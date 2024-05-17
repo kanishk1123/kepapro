@@ -15,21 +15,27 @@ import Ads from "../components/ads.txt"
 const Routing = () => {
 
   return (
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/watch/:name/:seo/:episode' element={<Watch/>}  />
-      <Route path='/all/:type' element={<Allanime/>}/>
-      <Route path='/user/:username' element={<User/>} />
-      <Route path='/news' element={<News/>} />
-      <Route path='/registre' element={<Registration/>} />
-      <Route path='/login' element={<Login/>} />
-      <Route path='/kanishkproh' element={<Adminlogin/>} />
-      <Route path='/adminreg' element={<Adminreg/>} />
-      <Route path='/adminlogin' element={<Adminlogin/>}/>
-      <Route path='/upload' element={<Upload/>} />
-       <Route path='/ads.txt' element={<Ads/>} />
-
-    </Routes>
+    
+  
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/watch/:name/:seo/:episode' element={<Watch />} />
+          <Route path='/all/:type' element={<Allanime />} />
+          <Route path='/user/:username' element={<User />} />
+          <Route path='/news' element={<News />} />
+          <Route path='/register' element={<Registration />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/adminlogin' element={<Adminlogin />} />
+          <Route path='/adminreg' element={<Adminreg />} />
+          <Route path='/upload' element={<Upload />} />
+          <Route path='/ads.txt' element={<Ads />} />
+          {/* Add more routes as needed */}
+          {/* Redirect to 404 page for unknown routes */}
+          <Route path='*' element={<Navigate to='/404' />} />
+        </Routes>
+   
+    
+    
   )
 }
 
