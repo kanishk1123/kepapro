@@ -61,19 +61,19 @@ const Home = () => {
                       <Link
                         to={`/watch/${item.animename}/${item.season}/${item.ep}`}
                       >
-                       <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-full  ">
-                          <div className="w-full h-[90vh]  flex justify-between">
-                            <div className="w-[65%] h-full relative">
-                              <div className="w-full h-full flex justify-start">
+                    <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-[100%]  ">
+                          <div className="w-full h-[100%]  flex justify-between">
+                            <div className="w-[65%] h-[100%] relative">
+                              <div className="w-full h-[100%] flex justify-start">
                                 <div
-                                  className="w-[90vw] h-full max-sm:w-[150%] overflow-hidden"
+                                  className="w-[90vw] h-[100%] max-sm:w-[150%] overflow-hidden"
                                   style={{
                                     ...clipPathStyle,
                                     position: "absolute",
                                     backdropFilter: "blur(30px)",
                                   }}
                                 >
-                                  <div className="flex flex-col  justify-between h-full  p-20 bg-[rgba(0,0,0,0.8)]">
+                                  <div className="flex flex-col  justify-between h-full max-sm:p-10   p-20 bg-[rgba(0,0,0,0.8)]">
                                     <div className="flex flex-col gap-3">
                                       <p>season {item.season}</p>
                                       <h1 className="text-[6vw] font-semibold">
@@ -84,8 +84,7 @@ const Home = () => {
                                       <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         xmlnsXlink="http://www.w3.org/1999/xlink"
-                                        height="50px"
-                                        width="50px"
+                                        className="w-[10vw] h-[10vw] max-h-[50px]"
                                         version="1.1"
                                         viewBox="0 0 47.94 47.94"
                                         xmlSpace="preserve"
@@ -99,8 +98,8 @@ const Home = () => {
                                         {item.rating}%
                                       </pre>
                                     </div>
-                                    <div className="w-full h-auto flex flex-wrap">
-                                      <div className="bg-[rgba(0,0,0,0.5)] px-4 rounded-full backdrop-blur-[60px] py-2">
+                                    <div className="w-full h-auto  flex flex-wrap">
+                                      <div className="bg-[rgba(0,0,0,0.5)] px-4 rounded-full backdrop-blur-[60px] text-[60%]  py-2">
                                         Watch now
                                       </div>
                                     </div>
