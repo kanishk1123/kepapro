@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { detailsContext } from "../utils/Context";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "../assets/public/css/home.css";
+import image from "../assets/public/images/peakpx.jpg"
 
 // Import Swiper styles
 import "swiper/css";
@@ -62,8 +62,8 @@ const Home = () => {
                         to={`/watch/${item.animename}/${item.season}/${item.ep}`}
                       >
                         <div className="text-3xl bg-zinc-900 text-white relative w-full overflow-hidden h-full  ">
-                          <div className="w-full h-full flex justify-between">
-                            <div className="w-[65%] h-full relative">
+                          <div className="w-full h-full max-h-[700px] flex justify-between">
+                            <div className="w-[65%] h-full max-h-[700px] relative">
                               <div className="w-full h-full flex justify-start">
                                 <div
                                   className="w-[90vw] h-full max-sm:w-[150%] overflow-hidden"
