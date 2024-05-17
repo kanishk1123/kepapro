@@ -19,7 +19,7 @@ const Adminreg = () => {
                 password
             };
     
-            const response = await axios.post("http://localhost:4000/createadmin", user, { withCredentials: true });
+            const response = await axios.post("/createadmin", user, { withCredentials: true });
             console.log(response.data); // Assuming your backend returns some data upon successful registration
     
             // Reset form fields after successful submission

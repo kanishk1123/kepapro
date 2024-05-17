@@ -6,7 +6,7 @@ import axios from '../utils/Axios';
 
 const Watch = () => {
 
-  const { name, seo, episode } = useParams(); // Accessing the 'name', 'season', and 'ep' parameters using useParams
+  const { name, seo, episode } = useParams(); // Accessing the 'name', 'season', and 'episode' parameters using useParams
 
   const [video, setVideo] = useState("");
   const [disc, setdisc] = useState("");
@@ -17,14 +17,26 @@ const Watch = () => {
   const [data, setData] = useState([]);
   const [live, setLive] = useState(false); // Assuming this is meant to track if content is live
   const [filteredData, setFilteredData] = useState(null); // Initialize filteredData with null
-  const [videoquality,setvideoquality] = useState("720")
+  const [videoquality,setvideoquality] = useState("720");
+  
+  
+  const url = window.location.href;
+  
+  // Decode the URL
+  const decodedUrl = decodeURIComponent(url);
+  
+  // Extract the desired part
+  const parts = decodedUrl.split('/');
+  const desiredPart = parts.slice(4);
+  
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("/watchall");
         setData(response.data);
-        console.log(data)
+      
+        
       } catch (error) {
         console.error("Error fetching data:", error);
         // Handle error if needed
@@ -54,10 +66,10 @@ const Watch = () => {
         return null; // Return null if data is empty
       }
       // Filter data based on name parameter
-      const filteredByName = data.filter(item => item.animename === name);
+      const filteredByName = data.filter(item => item.animename === desiredPart[0]);
       // Find the entry that matches both season and episode within the filtered data
-      const filtered = filteredByName.find(item => item.season == seo && item.ep == episode && item.quality == videoquality);
-      console.log(filtered, "this is here");
+      const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2]  );
+      console.log(desiredPart,"thisis here")
       return filtered;
     };
 
@@ -71,7 +83,7 @@ const Watch = () => {
       setquality(filtered.quality);
       setthumnail(filtered.thumnail);
     }
-  }, [data, name, seo, episode]);
+  }, [data, name, seo, episode, videoquality]); // Added 'videoquality' to the dependency array
 
   return (
     <>
@@ -79,48 +91,45 @@ const Watch = () => {
         <Navbar />
         <div className="h-fit pb-5 w-full p-4 flex flex-wrap gap-4">
           {/* Conditional rendering of iframe */}
+          <div className="w-[930px] overflow-hidden min-w-[300px] h-[60vw] max-h-[400px] rounded-lg relative">
+
+<div className="w-full h-[50px] top-3 text-black left-[90%] bg-transparent absolute z-20"></div>
+ 
           {
            <iframe
-           className="w-[930px] min-w-[300px] h-[60vw] max-h-[400px] rounded-lg"
+           className="w-full h-full rounded-lg z-10"
            src={video}
            scrolling="no"
            frameborder="0"
            allowfullscreen="true"
          ></iframe>
          }
+          </div>
+
+
+          <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-2 rounded-lg">
          
-
-
-          <div className="w-[380px] bg-zinc-800 p-4 flex flex-col gap-3 rounded-lg">
-            <img src="" alt="anime logo" />
+            <div className=" flex flex-col gap-3">
             <h1>Name: {filteredData ? filteredData.animename : ''}</h1>
-            <h1>live: {live ? "Yes" : "No"}</h1> {/* Display live status */}
-            <h1>Discription :  {filteredData ? filteredData.discription : ''}</h1>
-            <h1>genrec :  {filteredData ? filteredData.genres : ''}</h1>
-            <h1>genrec :  {filteredData ? filteredData.genres : ''}</h1>
-            <h1>season:  {seo}</h1>
-            <h1>ep :  {episode}</h1>
+            <h1>Discription :  {filteredData ? filteredData.description : ''}</h1>
+            <h1>Genrec : {filteredData ? filteredData.genres.join(' | ') : ''}</h1>
+            <h1>Season:  {seo}</h1>
+            <h1>Episode :  {episode}</h1>
+            </div>
           </div>
         </div>
-        <div className="flex gap-3">
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(1080)}>1080p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(720)}>720p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(480)}>480p</button>
-  <button className="bg-red-800 rounded-full px-2 py-1 " onClick={() => setvideoquality(240)}>240p</button>
-</div>
+       
 
-        <div className="w-[100vw] h-fit bg-black p-5 flex flex-wrap rounded gap-2">
+        <div className="w-fit  h-fit bg-black p-5 flex flex-wrap rounded gap-2">
   {data.map((item, index) => {
-    return item.animename === name ? (
-      <Link key={index} to="/">
-        <div className="max-w-[440px]  w-[100vw] flex gap-3 rounded p-4 h-[150px] bg-zinc-700">
-          <img src={item.thumnail} className="w-1/2 rounded object-cover" alt="" />
-          <div className="flex flex-col w-2/3">
-          <p>{item.animename}</p>
+    return item.animename === name && item.quality === 720 ? (
+      <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
+        <div className="  w-fit flex gap-3 rounded p-4 h-fit bg-zinc-700">
+        
           <p>season : {item.season} ep : {item.ep} </p>
-          <p>{item.discription}</p>
+          
           </div>
-        </div>
+       
       </Link>
     ) : null;
   })}

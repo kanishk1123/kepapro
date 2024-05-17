@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { detailsContext } from '../utils/Context';
@@ -7,37 +7,39 @@ import { Link, useParams } from 'react-router-dom';
 const AllAnime = () => {
   const { type } = useParams();
   const [data] = useContext(detailsContext);
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    const filterData = () => {
+      if (data.length === 0) {
+        return; // Return if data is empty
+      }
+      // Filter data based on type
+      const filteredByType = data.filter(item => item.season === type || item.trending === type);
+      setFilteredData(filteredByType);
+    };
+
+    filterData(); // Call filter function
+  }, [data, type]); // Add data and type as dependencies
 
   return (
     <>
       <Navbar />
-      {data.map((item, index) =>
-        (item.popular || item.trending === type) ? (
+      <div className='p-3 flex gap-10 flex-wrap'>
+        {filteredData.map((item, index) => (
           <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
-            <div className='bg-neutral-900 w-full h-fit text-white' key={index}>
-              <div className='w-[600px] h-fit p-5 flex flex-wrap gap-10'>
-                <div className='bg-zinc-800 flex flex-shrink-0 p-5 h-fit rounded-xl w-[30%] gap-10'>
-                  <div className='w-1/2'>
-                    <img
-                      className='w-[400px]  h-2/3 object-cover rounded-2xl'
-                      src={item.thumnail}
-                      alt={`Image of ${item.name}`}
-                    />
-                    <h1 className='text-2xl font-semibold'>{item.animename}</h1>
-                  </div>
-                  <div className='w-[40%] text-center'>
-                   
-                  </div>
-                </div>
-              </div>
+            <div className='w-[40vw] max-w-[140px] flex flex-col h-[30vh] rounded-lg justify-center items-center bg-zinc-800 p-3'>
+              {/* Render your item details here */}
+              <div className='w-full h-[200px] rounded  overflow-hidden'>
+
+              <img  className='w-full h-full object-cover' src={item.thumnail} alt={item.animename} />
+              </div >
+              <h2>{item.animename}</h2>
+              <p>Watch now</p>
             </div>
           </Link>
-        ) : (
-          <div className='w-full h-[75vh] bg-zinc-800' key={index}>
-            <p className='text-5xl font-semibold text-center'>Nothing for now</p>
-          </div>
-        )
-      )}
+        ))}
+      </div>
       <Footer />
     </>
   );
