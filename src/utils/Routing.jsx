@@ -18,7 +18,7 @@ const Routing = () => {
     
   
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home />} exact  />
           <Route path='/watch/:name/:seo/:episode' element={<Watch />} />
           <Route path='/all/:type' element={<Allanime />} />
           <Route path='/user/:username' element={<User />} />
