@@ -367,16 +367,17 @@ const Home = () => {
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <div key={index} className="flex flex-col  h-full  w-[130px] rounded-3xl gap-3 justify-center items-start">
-                <img
-                  src={filteredItem.thumnail}
-                  className="w-full h-[200px] rounded-3xl "
-                  alt="animeimage"
-                />
-                <div className="tetx-2xl font-semibold">{filteredItem.animename}</div>
-                <Link 
-                className=" flex justify-center items-center w-1/2 text-[20px] h-[50px] px-2 py-1 rounded-full "
-                 to={`/watch/${filteredItem.animename}/${filteredItem.season}/${filteredItem.ep}`}>watch</Link>
+            <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
+            <div className='w-[40vw] max-w-[140px] flex flex-col h-[30vh] rounded-lg justify-center items-center bg-zinc-800 p-3'>
+              {/* Render your item details here */}
+              <div className='w-full h-[200px] rounded  overflow-hidden'>
+
+              <img  className='w-full h-full object-cover' src={item.thumnail} alt={item.animename} />
+              </div >
+              <h2>{item.animename}</h2>
+              <p>Watch now</p>
+            </div>
+          </Link>
               </div>
               
             ))}
