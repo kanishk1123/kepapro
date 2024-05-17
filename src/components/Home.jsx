@@ -367,14 +367,14 @@ const Home = () => {
               item.animename.toLowerCase().includes(resultsearch.toLowerCase())
             )
             .map((filteredItem, index) => (
-              <Link key={index} to={`/watch/${item.animename}/${item.season}/${item.ep}`}>
+              <Link key={index} to={`/watch/${filteredItem.animename}/${filteredItem.season}/1`}>
             <div className='w-[40vw] max-w-[140px] flex flex-col h-[30vh] rounded-lg justify-center items-center bg-zinc-800 p-3'>
               {/* Render your item details here */}
               <div className='w-full h-[200px] rounded  overflow-hidden'>
 
-              <img  className='w-full h-full object-cover' src={item.thumnail} alt={item.animename} />
+              <img  className='w-full h-full object-cover' src={filteredItem.thumnail} alt={filteredItem.animename} />
               </div >
-              <h2>{item.animename}</h2>
+              <h2>{filteredItem.animename}</h2>
               <p>Watch now</p>
             </div>
           </Link>
