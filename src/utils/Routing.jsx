@@ -31,7 +31,6 @@ const Routing = () => {
           <Route path='/ads.txt' element={<Ads />} />
           {/* Add more routes as needed */}
           {/* Redirect to 404 page for unknown routes */}
-          <Route path='*' element={<Navigate to='/404' />} />
         </Routes>
    
     
