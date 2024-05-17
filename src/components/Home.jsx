@@ -53,7 +53,7 @@ const Home = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper h-full z-1 max-sm:h-[50vh]"
+                className="mySwiper h-[80vh] z-1 max-sm:h-[50vh]"
               >
                 {data.slice(0, 5).map((item, index) => (
                   <Link key={index} to={``}>
