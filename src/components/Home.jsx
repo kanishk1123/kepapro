@@ -374,7 +374,7 @@ const Home = () => {
 
               <img  className='w-full h-full object-cover' src={filteredItem.thumnail} alt={filteredItem.animename} />
               </div >
-              <h2>{filteredItem.animename}</h2>
+              <h2 className="font-semibold">{filteredItem.animename}</h2>
               <p>Watch now</p>
             </div>
           </Link>
