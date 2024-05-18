@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { detailsContext } from "../utils/Context";
 import { Swiper, SwiperSlide } from "swiper/react";
 import image from "../assets/public/images/peakpx.jpg"
+import Cookies from 'js-cookie';
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,6 +30,14 @@ const Home = () => {
   const clipPathStyle = {
     clipPath: "polygon(0 0, 84% 0, 75% 100%, 0% 100%)",
   };
+
+  Cookies.set('cookieName', 'cookieValue', { expires: 7 }); // Expires in 7 days
+
+  const cookieValue = Cookies.get('cookieName');
+
+  useEffect(()=>{
+    console.log(cookieValue);
+  },[])
 
   return (
     <>
