@@ -36,8 +36,9 @@ const Navbar = ({ setsearchResult, resultsearch }) => {
   const [CursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [search, setSearch] = useState(false);
   const [temp, setTemp] = useState(false);
-  const [showmenu, setshowmenu] = useState(false);
+  const [showmenu,setshowmenu] = useState(false)
   const [isChecked, setIsChecked] = useState(false);
+  
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
@@ -91,99 +92,97 @@ const Navbar = ({ setsearchResult, resultsearch }) => {
 
   return (
     <nav className="flex text-2xl max-md:h-fit max-md:pb-[80px] justify-between  transition-height duration-300 ease-in-out h-18 py-3 px-0 text-white bg-black relative">
+
+
+
       <div
         className="bg-red-600 duration-100 absolute h-5 w-5 rounded-full z-1 border-red-600 max-md:bg-none"
         style={cursorStyle}
       ></div>
 
-      <div className="p-3 duration-700">
-        <input
-          type="checkbox"
-          role="button"
-          aria-label="Display the menu"
-          className="menu md:hidden"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-        />
-
-        <div
-          className={` transition-height duration-300 rounded-2xl  ease-in-out  ${
-            isChecked ? "w-fit h-fit text-[7vw] " : "w-[0%] text-[0%] h-[0]"
-          } bg-zinc-700  w-[300px]`}
+<div className="p-3 duration-700">
+      <input
+        type="checkbox"
+        role="button"
+        aria-label="Display the menu"
+        className="menu md:hidden"
+        checked={isChecked}
+        onChange={handleCheckboxChange}
+      />
+      {isChecked && (
+        <div className={` transition-height duration-1000 rounded-2xl  ease-in-out  ${isChecked ? 'w-fit h-fit': 'w-0 h-0'} bg-zinc-700  w-[300px]`}>
+          <div className="p2 flex duration-500 flex-col text-[20vw] w-full z-10 items-start gap-3 pt-3">
+          <NavLink
+          to="/register"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="navlink text-[7vw] w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+          style={(e) =>
+            e.isActive
+              ? { backdropFilter: "blur(10px)", fontWeight: "700" }
+              : { background: "transparent" }
+          }
         >
-          <div className="p2 flex duration-100 flex-col  w-full z-10 items-start gap-3 pt-3">
-            <NavLink
-              to="/register"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navlink  w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-              style={(e) =>
-                e.isActive
-                  ? { backdropFilter: "blur(10px)", fontWeight: "700" }
-                  : { background: "transparent" }
-              }
-            >
-              register
-            </NavLink>
-            <NavLink
-              to="/login"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navlink w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-              style={(e) =>
-                e.isActive
-                  ? { backdropFilter: "blur(10px)", fontWeight: "700" }
-                  : { background: "transparent" }
-              }
-            >
-              login
-            </NavLink>
-            <NavLink
-              to="/all/populer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navlink  w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-              style={(e) =>
-                e.isActive
-                  ? { backdropFilter: "blur(10px)", fontWeight: "700" }
-                  : { background: "transparent" }
-              }
-            >
-              Populer 🌟
-            </NavLink>
-            <NavLink
-              to="/all/trending"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navlink  w-fit px-2 py-1 backdrop-blur-lg rounded-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-              style={(e) =>
-                e.isActive
-                  ? { backdropFilter: "blur(10px)", fontWeight: "700" }
-                  : { background: "transparent" }
-              }
-            >
-              trending 🔥
-            </NavLink>
-            <NavLink
-              to="/news"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="navlink  w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-              style={(e) =>
-                e.isActive
-                  ? { backdropFilter: "blur(10px)", fontWeight: "700" }
-                  : { background: "transparent" }
-              }
-            >
-              News 📰
-            </NavLink>
-          </div>
-        </div>
+          register
+        </NavLink>
+        <NavLink
+          to="/login"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="navlink text-[7vw] w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+          style={(e) =>
+            e.isActive
+              ? { backdropFilter: "blur(10px)", fontWeight: "700" }
+              : { background: "transparent" }
+          }
+        >
+          login
+        </NavLink>
+        <NavLink
+          to="/all/populer"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="navlink text-[7vw] w-fit px-2 py-1 rounded-lg backdrop-blur-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+          style={(e) =>
+            e.isActive
+              ? { backdropFilter: "blur(10px)", fontWeight: "700" }
+              : { background: "transparent" }
+          }
+        >
+          Populer 🌟
+        </NavLink>
+        <NavLink
+          to="/all/trending"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="navlink text-[7vw] w-fit px-2 py-1 backdrop-blur-lg rounded-lg border-0 border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+          style={(e) =>
+            e.isActive
+              ? { backdropFilter: "blur(10px)", fontWeight: "700" }
+              : { background: "transparent" }
+          }
+        >
+          trending 🔥
+        </NavLink>
+        <NavLink
+          to="/news"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="navlink text-[7vw] w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+          style={(e) =>
+            e.isActive
+              ? { backdropFilter: "blur(10px)", fontWeight: "700" }
+              : { background: "transparent" }
+          }
+        >
+          News 📰
+        </NavLink>
       </div>
+        </div>
+      )}
+    </div>
 
-      <div
-        className={`p1 h-14 w-[330px] flex text-2xl  z-30 gap-8 justify-evenly px-1 py-3 text-white bg-transparent relative `}
-      >
+      <div className={`p1 h-14 w-[330px] flex text-2xl  z-30 gap-8 justify-evenly px-1 py-3 text-white bg-transparent relative `}>
         <NavLink
           to="/"
           onMouseEnter={handleMouseEnter}
@@ -287,50 +286,57 @@ const Navbar = ({ setsearchResult, resultsearch }) => {
               }`}
             >
               <div className="font-medium flex flex-col  text-center justify-center p-3">
-                <Link to="/register">sign up</Link>
+                <Link to="/register">
+                sign up
+                </Link>
                 <div className="bg-zinc-600 border-zinc-600 h-1 rounded" />
-
-                <Link to="login">login</Link>
+              
+                <Link to="login">
+                login
+                </Link>
+               
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {isChecked == false && (
-        <div className="bg-transparent pt-3 pr-3 w-fit top-[13vh] max-md:absolute flex justify-center items-center h-fit  max-md:ml-0 gap-3  ">
-          <button
-            onClick={() => setSearch(!search)}
-            className="navlink text-lg w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
-          >
-            <Link to="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="32"
-                height="32"
-                fill="currentColor"
-              >
-                <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
-              </svg>
-            </Link>
-          </button>
-          <form
-            className={`p2 flex justify-center duration-600 gap-2 items-center`}
-            onSubmit={submitHandler}
-            value={result}
-            onChange={(e) => setResult(e.target.value)}
-          >
-            <input
-              onChange={(e) => setsearchResult(e.target.value)}
-              value={resultsearch}
-              className="px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[200px]"
-              style={width}
-              placeholder="search"
-              type="text"
-            />
-          </form>
         </div>
+        {isChecked == false && (
+        <div className="bg-transparent pt-3 pr-3 w-fit top-[13vh] max-md:absolute flex justify-center items-center h-fit  max-md:ml-0 gap-3  ">
+        <button
+          onClick={() => setSearch(!search)}
+          className="navlink text-lg w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
+        >
+          <Link to="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="32"
+              height="32"
+              fill="currentColor"
+            >
+              <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
+            </svg>
+          </Link>
+        </button>
+        <form
+          className={`p2 flex justify-center duration-600 gap-2 items-center`}
+          onSubmit={submitHandler}
+          value={result}
+          onChange={(e) => setResult(e.target.value)}
+        >
+          <input
+            onChange={(e) => setsearchResult(e.target.value)}
+            value={resultsearch}
+            className="px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[200px]"
+            style={width}
+            placeholder="search"
+            type="text"
+          />
+        </form>
+     
+    </div>
       )}
+        
     </nav>
   );
 };
