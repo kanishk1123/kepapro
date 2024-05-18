@@ -18,6 +18,7 @@ const Watch = () => {
   const [live, setLive] = useState(false); // Assuming this is meant to track if content is live
   const [filteredData, setFilteredData] = useState(null); // Initialize filteredData with null
   const [videoquality,setvideoquality] = useState("720");
+  const [abseason, setabseason] = useState()
   
   
   const url = window.location.href;
@@ -67,14 +68,28 @@ const Watch = () => {
       }
       // Filter data based on name parameter
       const filteredByName = data.filter(item => item.animename === desiredPart[0]);
+      
       // Find the entry that matches both season and episode within the filtered data
       const filtered = filteredByName.find(item => item.season == desiredPart[1] && item.ep == desiredPart[2]  );
       console.log(desiredPart,"thisis here")
       return filtered;
     };
-
+    const filterDataseason = () => {
+      if (data.length === 0) {
+        return null; // Return null if data is empty
+      }
+      // Filter data based on name parameter
+      const filteredByName = data.filter(item => item.animename === desiredPart[0]);
+      
+      // Find the entry that matches both season and episode within the filtered data
+      const filteredseason = filteredByName.find(item =>  item.ep == desiredPart[2]  );
+      console.log(desiredPart,"thisis here")
+      return filteredseason;
+    };
+    const season = filterDataseason()
     const filtered = filterData();
     setFilteredData(filtered); // Update filteredData
+    setabseason(season)
 
     if (filtered) {
       setVideo(filtered.videolink);
@@ -89,6 +104,19 @@ const Watch = () => {
     <>
       <div className="bg-neutral-900 text-white w-full">
         <Navbar />
+        {
+
+        }
+        {
+          abseason.map((item,index)=>
+            (<div key='index' className="flex gap-3">
+        <Link to="">
+          <div className="bg-red-700 px-2 py-1 w-fit rounded-full">season {item.season}</div>
+        </Link>
+        </div>)
+          )
+        }
+        
         <div className="h-fit pb-5 w-full p-4 flex flex-wrap gap-4">
           {/* Conditional rendering of iframe */}
           <div className="w-[930px] overflow-hidden min-w-[300px] h-[60vw] max-h-[400px] rounded-lg relative">
