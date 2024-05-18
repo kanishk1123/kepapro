@@ -29,7 +29,6 @@ const Footer = () => {
 
         
       </div>
-      <input type="text" value={temp} onChnage={(e)=>setTemp(e.target.value)} className="bg-transparent placeholder:text-[white]" placeholder=" this complete date is take from an api we don't have any data about the content which show" /> 
     </footer>
   );
 };
