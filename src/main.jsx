@@ -9,6 +9,7 @@ import Context from './utils/Context.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Context>
 <BrowserRouter>
+
     <App />
 </BrowserRouter>
     </Context>
