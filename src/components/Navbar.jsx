@@ -301,7 +301,7 @@ const Navbar = ({ setsearchResult, resultsearch }) => {
         </div>
         </div>
         {isChecked == false && (
-        <div className="bg-transparent pt-3 pr-3 w-fit top-[13vh] max-md:absolute flex justify-center items-center h-fit  max-md:ml-0 gap-3  ">
+        <div className="bg-transparent pt-3 pr-3 w-[400px] max-md:w-fit top-[13vh] max-md:absolute flex justify-end items-end h-fit  max-md:ml-0 gap-3   ">
         <button
           onClick={() => setSearch(!search)}
           className="navlink text-lg w-fit px-2 py-1 rounded-lg border-0 backdrop-blur-lg border-12 border-[rgba(0, 0, 0,0.8)] border-opacity-40 z-99"
@@ -327,7 +327,7 @@ const Navbar = ({ setsearchResult, resultsearch }) => {
           <input
             onChange={(e) => setsearchResult(e.target.value)}
             value={resultsearch}
-            className="px-2 w-0 duration-500 -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[200px]"
+            className="px-2 w-0 duration-500 max-md:w-[100%] max-md:max-w-[100%] -mt-2 py-1 rounded-xl placeholder:text-zinc-400 bg-transparent border-2 border-zinc-400 max-w-[200px]"
             style={width}
             placeholder="search"
             type="text"
